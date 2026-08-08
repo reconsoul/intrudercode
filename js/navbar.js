@@ -296,6 +296,110 @@ window.addEventListener("load", () => {
 
 });
 
+/* ==========================================================
+   THEME ENGINE
+========================================================== */
+
+const themeToggle = document.getElementById("themeToggle");
+const root = document.documentElement;
+
+function setTheme(theme) {
+
+    root.setAttribute("data-theme", theme);
+
+    localStorage.setItem("theme", theme);
+
+    updateLogo(theme);
+
+    updateBrowserTheme(theme);
+
+    themeToggle?.setAttribute(
+        "aria-pressed",
+        theme === "dark"
+    );
+
+    const icon = themeToggle?.querySelector("i");
+
+    if (icon) {
+
+        icon.className =
+
+            theme === "dark"
+
+                ? "fa-solid fa-sun"
+
+                : "fa-solid fa-moon";
+
+    }
+
+}
+
+/* ==========================================================
+   toogle switch light / dark
+========================================================== */
+
+function getPreferredTheme() {
+    const saved = localStorage.getItem("theme");
+    if (saved) return saved;
+
+    return window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? "dark"
+        : "light";
+}
+
+const currentTheme = getPreferredTheme();
+setTheme(currentTheme);
+
+themeToggle?.addEventListener("click", () => {
+    const nextTheme =
+        root.getAttribute("data-theme") === "dark"
+            ? "light"
+            : "dark";
+
+    setTheme(nextTheme);
+});
+
+function updateLogo(theme){
+
+    const logo = document.getElementById("siteLogo");
+
+    if(!logo) return;
+
+    logo.src =
+
+        theme==="dark"
+
+        ? "images/dark.png"
+
+        : "images/light.png";
+
+}
+
+function updateBrowserTheme(theme){
+
+    const meta =
+
+        document.querySelector(
+
+            'meta[name="theme-color"]'
+
+        );
+
+    if(!meta) return;
+
+    meta.setAttribute(
+
+        "content",
+
+        theme==="dark"
+
+        ? "#0F172A"
+
+        : "#FFFFFF"
+
+    );
+
+}
 
 /* ==========================================================
    END OF NAVBAR.JS

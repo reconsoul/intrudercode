@@ -38,7 +38,7 @@ function initializeRevealAnimations() {
     const revealElements = document.querySelectorAll(
 
         ".section-heading," +
-        ".expert-card," +
+        ".trust-card," +
         ".solution-card," +
         ".industry-item," +
         ".why-card," +

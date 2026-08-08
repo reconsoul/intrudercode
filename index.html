@@ -16,7 +16,7 @@
           content="IE=edge">
 
     <title>
-        INTRUDERCODE
+        IntrudeCode
     </title>
 
     <meta name="description"
@@ -40,14 +40,14 @@
     =================================================== -->
 
     <link rel="preconnect"
-          href="https://fonts.googleapis.com">
+    href="https://fonts.googleapis.com">
 
     <link rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossorigin>
+    href="https://fonts.gstatic.com"
+    crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
-          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
 
     <!-- ==================================================
          FONT AWESOME
@@ -69,6 +69,12 @@
     <link rel="stylesheet"
           href="css/responsive.css">
 
+    <meta name="theme-color"
+      content="#7C3AED">
+
+    <meta name="color-scheme"
+        content="light dark">
+
 </head>
 
 <body>
@@ -88,82 +94,63 @@
             <a href="index.html"
                class="logo">
 
-                <img src="images/logo.png"
-                     alt="IntruderCode Logo">
+                <img
+                    id="siteLogo"
+                    src="images/light.png"
+                    alt="IntruderCode Logo"
+                    class="logo-image">
 
             </a>
 
             <!-- Navigation -->
 
-            <ul class="nav-links">
+            <ul class="nav-links" id="primary-navigation">
 
-                <li>
+                <li><a href="index.html">Home</a></li>
 
-                    <a href="services.html">
+                <li><a href="services.html">Solutions</a></li>
 
-                        Solutions
+                <li><a href="about.html">About</a></li>
 
-                    </a>
+                <li><a href="careers.html">Careers</a></li>
 
-                </li>
-
-                <li>
-
-                    <a href="#industries">
-
-                        Industries
-
-                    </a>
-
-                </li>
-
-                <li>
-
-                    <a href="about.html">
-
-                        About Us
-
-                    </a>
-
-                </li>
-
-                <li>
-
-                    <a href="careers.html">
-
-                        Careers
-
-                    </a>
-
-                </li>
-
-                <li>
-
-                    <a href="contact.html">
-
-                        Contact
-
-                    </a>
-
-                </li>
+                <li><a href="contact.html">Contact</a></li>
 
             </ul>
 
             <!-- CTA -->
 
-            <a href="contact.html"
-               class="btn btn-primary">
+            <div class="nav-actions">
 
-                Get Quote
+                <button
+                    id="themeToggle"
+                    class="theme-toggle"
+                    aria-label="Toggle light and dark theme"
+                    aria-pressed="false"
+                    title="Switch Theme">
 
-                <i class="fa-solid fa-arrow-right"></i>
+                    <i class="fa-solid fa-moon"></i>
 
-            </a>
+                </button>
+
+                <a href="contact.html"
+                class="btn btn-primary">
+
+                    Schedule Consultation
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </div>
 
             <!-- Mobile -->
 
-            <button class="menu-btn"
-                    aria-label="Open Navigation">
+            <button
+                class="menu-btn"
+                aria-label="Open Navigation"
+                aria-expanded="false"
+                aria-controls="primary-navigation">
 
                 <i class="fa-solid fa-bars"></i>
 
@@ -215,10 +202,6 @@
                     <i class="fa-solid fa-shield-halved"></i>
 
                     Enterprise Cybersecurity & Infrastructure Security
-                    •
-                    AI Data Services
-                    •
-                    Managed IT
 
                 </span>
 
@@ -232,25 +215,18 @@
 
                     </span>
 
-                    <br>
-
-                    Crafting Secure Tomorrow
-
                 </h1>
 
                 <p>
 
-                    <p>
-
-                        IntruderCode helps organizations protect their digital
+                         IntruderCode helps organizations protect their digital
                         infrastructure through enterprise cybersecurity,
                         infrastructure security, AI data annotation services,
-                        and managed IT solutions. We deliver secure,
-                        scalable, and future-ready technology for startups,
-                        enterprises, government organizations,
-                        and global businesses.
+                        and managed IT solutions.
 
-                    </p>
+                        We deliver secure, scalable, and future-ready technology
+                        for startups, enterprises, government organizations,
+                        and international clients.
 
                 </p>
 
@@ -280,7 +256,7 @@
 
                         <i class="fa-solid fa-circle-check"></i>
 
-                        Certified Professionals
+                        Enterprise Cybersecurity
 
                     </div>
 
@@ -288,7 +264,7 @@
 
                         <i class="fa-solid fa-circle-check"></i>
 
-                        24×7 Monitoring
+                        AI Data Annotation
 
                     </div>
 
@@ -296,7 +272,7 @@
 
                         <i class="fa-solid fa-circle-check"></i>
 
-                        Global Delivery
+                        Managed IT Services
 
                     </div>
 
@@ -304,7 +280,7 @@
 
                         <i class="fa-solid fa-circle-check"></i>
 
-                        Enterprise Security
+                        AWS • Azure • GCP
 
                     </div>
 
@@ -538,13 +514,13 @@
 
                         <h3>
 
-                            99.98%
+                            Security-First
 
                         </h3>
 
                         <p>
 
-                            Infrastructure Protected
+                            Architecture
 
                         </p>
 
@@ -568,13 +544,13 @@
 
                         <h3>
 
-                            Zero Critical Alerts
+                            24×7
 
                         </h3>
 
                         <p>
 
-                            Last 24 Hours
+                            Security Monitoring
 
                         </p>
 
@@ -632,7 +608,7 @@
 
             <span class="section-badge">
 
-                Why Trust IntruderCode
+                Why Organizations Choose IntruderCode
 
             </span>
 
@@ -646,10 +622,9 @@
 
             <p>
 
-                We combine certified cybersecurity professionals,
-                cloud expertise, and modern infrastructure
-                management to help organizations secure
-                their digital ecosystem.
+                We combine cybersecurity expertise, cloud technologies,
+                AI data services and managed IT operations to deliver
+                secure, scalable and business-focused solutions.
 
             </p>
 
@@ -659,24 +634,25 @@
 
             <!-- Card -->
 
-            <div class="expert-card">
+            <div class="trust-card">
 
-                <div class="expert-icon">
+                <div class="trust-icon">
 
-                    <i class="fa-brands fa-microsoft"></i>
+                    <i class="fa-solid fa-user-shield"></i>
 
                 </div>
 
                 <h3>
 
-                    Microsoft Azure
+                    Certified Professionals
 
                 </h3>
 
                 <p>
 
-                    AZ-104 Certified
-                    Cloud Administration
+                    Backed by industry-recognized certifications including
+                    Microsoft AZ-104, Certified Ethical Hacker (CEH),
+                    and Certified Penetration Testing Professional (CPENT).
 
                 </p>
 
@@ -684,23 +660,24 @@
 
             <!-- Card -->
 
-            <div class="expert-card">
+            <div class="trust-card">
 
-                <div class="expert-icon">
+                <div class="trust-icon">
 
-                    <i class="fa-solid fa-user-secret"></i>
+                    <i class="fa-solid fa-cloud"></i>
 
                 </div>
 
                 <h3>
 
-                    CEH
+                    Multi-Cloud Expertise
 
                 </h3>
 
                 <p>
 
-                    Certified Ethical Hacker
+                    Secure deployment, administration and protection of
+                    AWS, Microsoft Azure and Google Cloud environments.
 
                 </p>
 
@@ -708,33 +685,9 @@
 
             <!-- Card -->
 
-            <div class="expert-card">
+            <div class="trust-card">
 
-                <div class="expert-icon">
-
-                    <i class="fa-solid fa-bug"></i>
-
-                </div>
-
-                <h3>
-
-                    CPENT
-
-                </h3>
-
-                <p>
-
-                    Certified Penetration Tester
-
-                </p>
-
-            </div>
-
-            <!-- Card -->
-
-            <div class="expert-card">
-
-                <div class="expert-icon">
+                <div class="trust-icon">
 
                     <i class="fa-solid fa-shield-halved"></i>
 
@@ -742,14 +695,41 @@
 
                 <h3>
 
-                    Enterprise Security
+                    Security-First Approach
 
                 </h3>
 
                 <p>
 
-                    Infrastructure Protection &
-                    Security Consulting
+                    Every engagement begins with risk assessment,
+                    secure architecture and proactive protection
+                    rather than reactive fixes.
+
+                </p>
+
+            </div>
+
+            <!-- Card -->
+
+            <div class="trust-card">
+
+                <div class="trust-icon">
+
+                    <i class="fa-solid fa-earth-asia"></i>
+
+                </div>
+
+                <h3>
+
+                    Global Service Delivery
+
+                </h3>
+
+                <p>
+
+                    Supporting startups, SMEs, enterprises,
+                    educational institutions and government
+                    organizations across multiple regions.
 
                 </p>
 
@@ -976,7 +956,7 @@
 
             <span class="section-badge">
 
-                Industries We Serve
+                Industries We Protect
 
             </span>
 
@@ -1401,15 +1381,13 @@
 
             <div>
 
-                <img src="images/logo.png"
+                <img src="images/dark.png"
                      alt="IntruderCode Logo"
                      class="footer-logo">
 
                 <p>
 
-                    Crafting Secure Tomorrow through enterprise
-                    cybersecurity, AI data services,
-                    and managed IT solutions.
+                    Crafting Secure Tomorrow through enterprise cybersecurity, infrastructure security, AI data services, and managed IT solutions for businesses worldwide.
 
                 </p>
 
