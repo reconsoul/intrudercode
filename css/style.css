@@ -917,6 +917,23 @@ html[data-theme="dark"] .header{
 
 }
 
+html[data-theme="dark"] .header.scrolled {
+
+    background:
+        color-mix(
+            in srgb,
+            var(--surface) 92%,
+            transparent
+        );
+
+    box-shadow:
+        0 12px 35px var(--black-35);
+
+    border-bottom:
+        1px solid var(--border);
+
+}
+
 /* ==========================================================
    09. NAVBAR
 ========================================================== */
@@ -1221,16 +1238,16 @@ body.menu-open{
 ========================================================== */
 
 .nav-links a:focus-visible,
-
 .menu-btn:focus-visible,
+.theme-toggle:focus-visible,
+.btn:focus-visible {
 
-.btn:focus-visible{
+    outline:
+        3px solid var(--primary-25);
 
-    outline:3px solid var(--primary-25);
+    outline-offset: 4px;
 
-    outline-offset:4px;
-
-    border-radius:8px;
+    border-radius: 8px;
 
 }
 
@@ -2953,51 +2970,136 @@ body.menu-open{
 
 }
 
-.social-links{
+/* ==========================================================
+   FOOTER SOCIAL
+========================================================== */
 
-    display:flex;
+.footer-social {
 
-    gap:14px;
+    display: flex;
 
-    margin-top:20px;
+    gap: 12px;
 
-}
-
-.social-links a{
-
-    width:42px;
-
-    height:42px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    border-radius:12px;
-
-    background:var(--white-08);
-
-    transition:var(--transition);
+    margin-top: 22px;
 
 }
 
-.social-links a:hover{
+.footer-social a {
 
-    background:var(--primary);
+    width: 42px;
+
+    height: 42px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: var(--white-08);
 
     color: var(--white);
 
+    transition: var(--transition);
+
 }
 
-.footer-bottom{
+.footer-social a:hover {
 
-    border-top:1px solid var(--white-08);
+    background: var(--primary);
 
-    padding-top:25px;
+    color: var(--white);
 
-    text-align:center;
+    transform: translateY(-2px);
+
+}
+
+/* ==========================================================
+   FOOTER CONTACT
+========================================================== */
+
+.footer-contact {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+
+}
+
+.footer-contact li {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 12px;
+
+    color: var(--gray-300);
+
+}
+
+.footer-contact i {
+
+    color: var(--primary-light);
+
+    margin-top: 5px;
+
+}
+
+.footer-bottom {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    border-top:
+        1px solid var(--white-08);
+
+    padding-top: 25px;
+
+}
+
+.footer-bottom p {
+
+    margin: 0;
+
+    color: var(--gray-400);
+
+    font-size: .9rem;
+
+}
+
+.footer-legal {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 24px;
+
+}
+
+.footer-legal a {
+
+    color: var(--gray-400);
+
+    font-size: .9rem;
+
+    transition: var(--transition);
+
+}
+
+.footer-legal a:hover {
+
+    color: var(--white);
 
 }
 
@@ -3012,6 +3114,12 @@ body.menu-open{
     margin: 0;
 
     line-height: 1.8;
+
+}
+
+.footer-column {
+
+    min-width: 0;
 
 }
 

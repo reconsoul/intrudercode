@@ -140,11 +140,15 @@ document.addEventListener("keydown", (event) => {
 
 document.addEventListener("click", (event) => {
 
+    if (!navLinks) return;
+
     const clickedInsideNavbar =
         event.target.closest(".navbar");
 
-    if (!clickedInsideNavbar &&
-        navLinks.classList.contains("active")) {
+    if (
+        !clickedInsideNavbar &&
+        navLinks.classList.contains("active")
+    ) {
 
         closeMenu();
 
@@ -220,7 +224,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         event.preventDefault();
 
         const headerHeight =
-            header.offsetHeight;
+        header
+            ? header.offsetHeight
+            : 0;
 
         const targetPosition =
             target.offsetTop - headerHeight;

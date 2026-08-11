@@ -733,7 +733,7 @@
 
     }
 
-    .social-links{
+    .footer-social{
 
         justify-content:center;
 
@@ -1194,22 +1194,19 @@ img{
 
 
 /* ==========================================================
-   GLOBAL FOOTER
+   GLOBAL FOOTER — RESPONSIVE
 ========================================================== */
 
 @media (max-width: 768px) {
 
     .footer-grid {
 
-        grid-template-columns: repeat(
-            2,
-            minmax(0, 1fr)
-        );
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
 
         gap: 35px;
 
     }
-
 
     .footer-brand {
 
@@ -1219,6 +1216,11 @@ img{
 
     }
 
+    .footer-social {
+
+        justify-content: flex-start;
+
+    }
 
     .footer-bottom {
 
@@ -1227,7 +1229,6 @@ img{
         align-items: flex-start;
 
     }
-
 
     .footer-legal {
 
@@ -1249,7 +1250,6 @@ img{
 
     }
 
-
     .footer-grid {
 
         grid-template-columns: 1fr;
@@ -1258,10 +1258,15 @@ img{
 
     }
 
-
     .footer-brand {
 
         grid-column: auto;
+
+    }
+
+    .footer-social {
+
+        justify-content: center;
 
     }
 
