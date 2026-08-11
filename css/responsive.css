@@ -188,20 +188,20 @@
        TRUSTED EXPERTISE
     ===================================================== */
 
-    .expertise-grid{
+    .trust-grid {
 
-        grid-template-columns:repeat(2,1fr);
+            grid-template-columns:
+                repeat(2, 1fr);
 
-        gap:24px;
+            gap: 24px;
 
-    }
+        }
 
-    .expert-card{
+    .trust-card {
 
-        padding:35px 28px;
+            padding: 35px 28px;
 
-    }
-
+        }
     /* =====================================================
        CORE SOLUTIONS
     ===================================================== */
@@ -611,9 +611,9 @@
        TRUSTED EXPERTISE
     ===================================================== */
 
-    .expertise-grid{
+    .trust-grid {
 
-        grid-template-columns:1fr;
+        grid-template-columns: 1fr;
 
     }
 

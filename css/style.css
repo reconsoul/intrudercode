@@ -1444,6 +1444,35 @@ body.menu-open{
 
 }
 
+.solution-label {
+
+    display: inline-flex;
+
+    align-self: flex-start;
+
+    margin-bottom: 20px;
+
+    padding: 6px 12px;
+
+    border-radius: 999px;
+
+    background: var(--primary-08);
+
+    color: var(--primary);
+
+    border:
+        1px solid var(--primary-15);
+
+    font-size: .72rem;
+
+    font-weight: 700;
+
+    letter-spacing: .04em;
+
+    text-transform: uppercase;
+
+}
+
 /* ==========================================================
    HERO CONTENT
 ========================================================== */
@@ -1798,6 +1827,42 @@ body.menu-open{
 .industry-card p {
 
     margin: 0;
+
+}
+
+.industry-arrow {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 36px;
+
+    height: 36px;
+
+    margin-top: 20px;
+
+    border-radius: 50%;
+
+    background: var(--primary-08);
+
+    color: var(--primary);
+
+    transition: var(--transition);
+
+}
+
+
+.industry-card:hover .industry-arrow {
+
+    background: var(--primary);
+
+    color: var(--white);
+
+    transform:
+        translateX(4px);
 
 }
 
@@ -2512,16 +2577,6 @@ body.menu-open{
 
 }
 
-.industry-grid{
-
-    display:grid;
-
-    grid-template-columns:repeat(3,1fr);
-
-    gap:26px;
-
-}
-
 .industry-item{
 
     background:var(--surface);
@@ -2576,53 +2631,50 @@ body.menu-open{
 
 }
 
-.industry-item span{
-
-    font-size:1.05rem;
-
-    font-weight:600;
-
-    color:var(--text);
-
-}
-
 /* ==========================================================
    22. SHARED CARD EFFECTS
 ========================================================== */
 
 .trust-card,
 .solution-card,
-.industry-item{
+.industry-card {
 
-    position:relative;
+    position: relative;
 
-    overflow:hidden;
+    overflow: hidden;
 
 }
 
 .trust-card::before,
 .solution-card::before,
-.industry-item::before{
+.trust-card:hover::before,
+.solution-card:hover::before,
+.industry-card::before {
 
-    content:"";
+    content: "";
 
-    position:absolute;
+    position: absolute;
 
-    top:0;
+    top: 0;
 
-    left:-120%;
+    left: -120%;
 
-    width:60%;
+    width: 45%;
 
-    height:100%;
+    height: 100%;
 
-    background: linear-gradient(
-        90deg,
-        var(--primary),
-        var(--accent)
-);
+    opacity: .35;
 
-    transform:skewX(-25deg);
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--primary),
+            transparent
+        );
+
+    transform:
+        skewX(-25deg);
 
 }
 
