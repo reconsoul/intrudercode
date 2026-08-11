@@ -23,7 +23,9 @@ const navItems = document.querySelectorAll(".nav-links a");
 
 if (!header || !menuBtn || !navLinks) {
 
-    console.warn("Navbar elements not found.");
+    console.warn(
+        "Navbar elements not found. Navigation features disabled."
+    );
 
 }
 
@@ -33,18 +35,33 @@ if (!header || !menuBtn || !navLinks) {
 
 function openMenu() {
 
+    if (!navLinks || !menuBtn) return;
+
     navLinks.classList.add("active");
 
     menuBtn.classList.add("active");
 
     document.body.classList.add("menu-open");
 
+    menuBtn.setAttribute(
+        "aria-expanded",
+        "true"
+    );
+
+    menuBtn.setAttribute(
+        "aria-label",
+        "Close navigation"
+    );
+
     menuBtn.innerHTML =
-        '<i class="fa-solid fa-xmark"></i>';
+        '<i class="fa-solid fa-xmark" aria-hidden="true"></i>';
 
 }
 
+
 function closeMenu() {
+
+    if (!navLinks || !menuBtn) return;
 
     navLinks.classList.remove("active");
 
@@ -52,8 +69,18 @@ function closeMenu() {
 
     document.body.classList.remove("menu-open");
 
+    menuBtn.setAttribute(
+        "aria-expanded",
+        "false"
+    );
+
+    menuBtn.setAttribute(
+        "aria-label",
+        "Open navigation"
+    );
+
     menuBtn.innerHTML =
-        '<i class="fa-solid fa-bars"></i>';
+        '<i class="fa-solid fa-bars" aria-hidden="true"></i>';
 
 }
 
@@ -61,19 +88,23 @@ function closeMenu() {
    TOGGLE MENU
 ========================================================== */
 
-menuBtn.addEventListener("click", () => {
+if (menuBtn && navLinks) {
 
-    if (navLinks.classList.contains("active")) {
+    menuBtn.addEventListener("click", () => {
 
-        closeMenu();
+        if (navLinks.classList.contains("active")) {
 
-    } else {
+            closeMenu();
 
-        openMenu();
+        } else {
 
-    }
+            openMenu();
 
-});
+        }
+
+    });
+
+}
 
 /* ==========================================================
    CLOSE WHEN LINK CLICKED
@@ -126,6 +157,8 @@ document.addEventListener("click", (event) => {
 ========================================================== */
 
 function handleScroll() {
+
+    if (!header) return;
 
     if (window.scrollY > 80) {
 
@@ -221,78 +254,12 @@ window.addEventListener("resize", () => {
 
 
 /* ==========================================================
-   SCROLL SPY
-========================================================== */
-
-const sections =
-    document.querySelectorAll("section[id]");
-
-function updateActiveSection() {
-
-    let currentSection = "";
-
-    sections.forEach(section => {
-
-        const sectionTop =
-            section.offsetTop - 140;
-
-        const sectionHeight =
-            section.offsetHeight;
-
-        if (
-
-            window.scrollY >= sectionTop &&
-            window.scrollY < sectionTop + sectionHeight
-
-        ) {
-
-            currentSection = section.getAttribute("id");
-
-        }
-
-    });
-
-    navItems.forEach(link => {
-
-        const href =
-            link.getAttribute("href");
-
-        if (
-
-            href &&
-            href.startsWith("#")
-
-        ) {
-
-            link.classList.remove("active");
-
-            if (href === "#" + currentSection) {
-
-                link.classList.add("active");
-
-            }
-
-        }
-
-    });
-
-}
-
-window.addEventListener(
-    "scroll",
-    updateActiveSection
-);
-
-
-/* ==========================================================
    INITIALIZE
 ========================================================== */
 
 window.addEventListener("load", () => {
 
     handleScroll();
-
-    updateActiveSection();
 
 });
 
@@ -305,9 +272,25 @@ const root = document.documentElement;
 
 function setTheme(theme) {
 
-    root.setAttribute("data-theme", theme);
+    if (
+        theme !== "light" &&
+        theme !== "dark"
+    ) {
 
-    localStorage.setItem("theme", theme);
+        theme = "light";
+
+    }
+
+
+    root.setAttribute(
+        "data-theme",
+        theme
+    );
+
+    localStorage.setItem(
+        "theme",
+        theme
+    );
 
     updateLogo(theme);
 
@@ -318,16 +301,16 @@ function setTheme(theme) {
         theme === "dark"
     );
 
-    const icon = themeToggle?.querySelector("i");
+
+    const icon =
+        themeToggle?.querySelector("i");
+
 
     if (icon) {
 
         icon.className =
-
             theme === "dark"
-
                 ? "fa-solid fa-sun"
-
                 : "fa-solid fa-moon";
 
     }
@@ -339,12 +322,27 @@ function setTheme(theme) {
 ========================================================== */
 
 function getPreferredTheme() {
-    const saved = localStorage.getItem("theme");
-    if (saved) return saved;
 
-    return window.matchMedia("(prefers-color-scheme: dark)").matches
+    const saved =
+        localStorage.getItem("theme");
+
+
+    if (
+        saved === "light" ||
+        saved === "dark"
+    ) {
+
+        return saved;
+
+    }
+
+
+    return window.matchMedia(
+        "(prefers-color-scheme: dark)"
+    ).matches
         ? "dark"
         : "light";
+
 }
 
 const currentTheme = getPreferredTheme();
