@@ -103,31 +103,23 @@ function initializeFloatingCards() {
 function initializeDashboardAnimation(){
 
     const statusCards =
-
-        document.querySelectorAll(".status-card");
+        document.querySelectorAll(
+            ".status-card, .dashboard-card"
+        );
 
     statusCards.forEach((card,index)=>{
 
-        card.style.opacity = "0";
-
-        card.style.transform = "translateX(30px)";
+        card.classList.add("dashboard-card-enter");
 
         setTimeout(()=>{
 
-            card.style.transition=
+            card.classList.add("show");
 
-                "all .6s ease";
-
-            card.style.opacity="1";
-
-            card.style.transform="translateX(0)";
-
-        },250+(index*150));
+        },250 + (index * 150));
 
     });
 
 }
-
 /* ==========================================================
    COUNTER ANIMATION
 ========================================================== */

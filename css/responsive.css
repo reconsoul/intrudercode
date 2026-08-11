@@ -1532,5 +1532,228 @@ img{
 }
 
 /* ==========================================================
+   CAREERS PAGE — TABLET
+========================================================== */
+
+@media (max-width: 992px) {
+
+    .culture-grid {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+    }
+
+
+    .benefits-grid {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+    }
+
+
+    .role-card {
+
+        grid-template-columns:
+            1fr auto;
+
+    }
+
+
+    .role-meta {
+
+        grid-column: 1;
+
+        flex-direction: row;
+
+        flex-wrap: wrap;
+
+    }
+
+
+    .role-card .btn {
+
+        grid-column: 2;
+
+        grid-row: 1 / span 2;
+
+    }
+
+
+    .apply-box {
+
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+
+    }
+
+
+    .apply-action {
+
+        justify-content: flex-start;
+
+    }
+
+}
+
+/* ==========================================================
+   CAREERS PAGE — MOBILE
+========================================================== */
+
+@media (max-width: 576px) {
+
+    .careers-hero {
+
+        min-height:
+            auto;
+
+    }
+
+
+    .careers-hero .dashboard {
+
+        margin-top: 10px;
+
+    }
+
+
+    .culture-grid,
+    .benefits-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .culture-card {
+
+        padding:
+            28px 24px;
+
+    }
+
+
+    .benefit-card {
+
+        padding:
+            24px;
+
+    }
+
+
+    .role-card {
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 20px;
+
+        padding:
+            24px;
+
+    }
+
+
+    .role-main {
+
+        align-items:
+            flex-start;
+
+    }
+
+
+    .role-meta {
+
+        min-width:
+            0;
+
+        flex-direction:
+            column;
+
+        gap: 8px;
+
+    }
+
+
+    .role-card .btn {
+
+        width:
+            100%;
+
+    }
+
+
+    .apply-box {
+
+        padding:
+            35px 24px;
+
+        border-radius:
+            22px;
+
+    }
+
+
+    .apply-action {
+
+        width:
+            100%;
+
+    }
+
+
+    .apply-action .btn {
+
+        width:
+            100%;
+
+    }
+
+}
+
+.careers-hero .dashboard-card {
+
+    padding:
+        14px;
+
+}
+
+
+.careers-hero .dashboard-card-icon {
+
+    width:
+        40px;
+
+    height:
+        40px;
+
+}
+
+
+.role-icon {
+
+    width:
+        48px;
+
+    height:
+        48px;
+
+}
+
+
+.apply-box {
+
+    padding:
+        30px 20px;
+
+}
+
+/* ==========================================================
    END OF RESPONSIVE.CSS
 ========================================================== */
