@@ -409,14 +409,16 @@ if(lazyImages.length){
    AUTO FOOTER YEAR
 ========================================================== */
 
+/* ==========================================================
+   AUTO FOOTER YEAR
+========================================================== */
+
 const footerYear =
+    document.getElementById("currentYear");
 
-    document.querySelector(".footer-year");
-
-if(footerYear){
+if (footerYear) {
 
     footerYear.textContent =
-
         new Date().getFullYear();
 
 }
