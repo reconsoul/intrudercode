@@ -40,9 +40,7 @@ function initializeRevealAnimations() {
         ".section-heading," +
         ".trust-card," +
         ".solution-card," +
-        ".industry-item," +
-        ".why-card," +
-        ".process-item," +
+        ".industry-card," +
         ".case-card," +
         ".cta-box"
 

@@ -542,7 +542,7 @@ section,
 .solution-card,
 .why-card,
 .trust-card,
-.industry-item,
+.industry-card,
 .status-card,
 .process-item,
 .cta-box,
@@ -2645,10 +2645,9 @@ body.menu-open{
 
 }
 
+
 .trust-card::before,
 .solution-card::before,
-.trust-card:hover::before,
-.solution-card:hover::before,
 .industry-card::before {
 
     content: "";
@@ -2678,19 +2677,22 @@ body.menu-open{
 
 }
 
+
 .trust-card:hover::before,
 .solution-card:hover::before,
-.industry-item:hover::before{
+.industry-card:hover::before {
 
-    animation:cardShine .9s forwards;
+    animation:
+        cardShine .9s forwards;
 
 }
 
-@keyframes cardShine{
 
-    to{
+@keyframes cardShine {
 
-        left:160%;
+    to {
+
+        left: 160%;
 
     }
 
@@ -3337,7 +3339,7 @@ button,
 .solution-card,
 .trust-card,
 .why-card,
-.industry-item,
+.industry-card,
 .process-item,
 .tech-grid span{
 

@@ -227,34 +227,6 @@
     }
 
     /* =====================================================
-       INDUSTRIES
-    ===================================================== */
-
-    .industry-grid{
-
-        grid-template-columns:repeat(2,1fr);
-
-        gap:22px;
-
-    }
-
-    .industry-item{
-
-        padding:26px;
-
-    }
-
-    .industry-item i{
-
-        width:55px;
-
-        height:55px;
-
-        font-size:22px;
-
-    }
-
-    /* =====================================================
        WHY US
     ===================================================== */
 
@@ -627,21 +599,6 @@
 
     }
 
-    /* =====================================================
-       INDUSTRIES
-    ===================================================== */
-
-    .industry-grid{
-
-        grid-template-columns:1fr;
-
-    }
-
-    .industry-item{
-
-        padding:22px;
-
-    }
 
     /* =====================================================
        WHY US
@@ -901,20 +858,6 @@
         font-size:24px;
 
     }
-
-    .industry-item{
-
-        padding:20px;
-
-    }
-
-    .industry-item i{
-
-        width:50px;
-
-        height:50px;
-
-        font-size:20px;
 
     }
 
