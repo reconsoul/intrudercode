@@ -1,140 +1,432 @@
-/* ==========================================================
-   INTRUDERCODE
-   STYLE.CSS
-========================================================== */
 
 /* ==========================================================
-   01. GOOGLE FONTS
+   BRAND PALETTE
+   ----------------------------------------------------------
+   CHANGE THESE THREE VALUES TO REBRAND THE WEBSITE.
 ========================================================== */
 
+:root {
 
-/* ==========================================================
-   02. ROOT VARIABLES
-========================================================== */
+    /* Primary brand color */
+    --primary:  #7C3AED;
 
-/* ==========================================================
-   DESIGN SYSTEM V3
-========================================================== */
+    /* Lighter primary variation */
+    --primary-light: #A855F7;
 
-:root{
+    /* Secondary accent */
+    --accent: #D946EF;
 
-    /* Brand */
 
-    --primary:#7C3AED;
+/* ======================================================
+   SEMANTIC COLORS
+====================================================== */
 
-    --primary-light:#A855F7;
+--success: #10B981;
 
-    --accent:#D946EF;
+--warning: #F59E0B;
 
-    /* Brand Transparency */
+--danger: #EF4444;
 
-    --primary-05:rgba(124,58,237,.05);
 
-    --primary-08:rgba(124,58,237,.08);
+/* ======================================================
+   NEUTRAL PALETTE
+====================================================== */
 
-    --primary-10:rgba(124,58,237,.10);
+--white: #FFFFFF;
 
-    --primary-15:rgba(124,58,237,.15);
+--black: #000000;
 
-    --primary-20:rgba(124,58,237,.20);
+--gray-50: #F8FAFC;
 
-    --primary-25:rgba(124,58,237,.25);
+--gray-100: #F1F5F9;
 
-    --accent-03:rgba(217,70,239,.03);
+--gray-200: #E2E8F0;
 
-    --accent-04:rgba(217,70,239,.04);
+--gray-300: #CBD5E1;
 
-    --accent-08:rgba(217,70,239,.08);
+--gray-400: #94A3B8;
 
-    --success:#10B981;
+--gray-500: #64748B;
 
-    --warning:#F59E0B;
+--gray-700: #334155;
 
-    --danger:#EF4444;
+--gray-900: #0F172A;
 
-    /* Neutral */
 
-    --white:#FFFFFF;
+/* ======================================================
+   THEME COLORS
+====================================================== */
 
-    --gray-50:#F8FAFC;
+--background: var(--white);
 
-    --gray-100:#F1F5F9;
+--surface: var(--white);
 
-    --gray-200:#E2E8F0;
+--surface-2: var(--gray-50);
 
-    --gray-300:#CBD5E1;
+--text: var(--gray-900);
 
-    --gray-500:#64748B;
+--text-light: var(--gray-500);
 
-    --gray-700:#334155;
+--border: var(--gray-200);
 
-    --gray-900:#0F172A;
 
-    /* Theme */
+    /* ======================================================
+       BRAND OPACITY TOKENS
+       ------------------------------------------------------
+       These automatically follow --primary.
+    ====================================================== */
 
-    --background:var(--surface);
+    --primary-00:
+    color-mix(
+        in srgb,
+        var(--primary) 0%,
+        transparent
+    );
 
-    --surface:#FFFFFF;
-
-    --surface-2:#F8FAFC;
-
-    --text:#0F172A;
-
-    --text-light:#64748B;
-
-    --border:#E2E8F0;
-
-    /* Radius */
-
-    --radius-sm:12px;
-
-    --radius-md:18px;
-
-    --radius-lg:24px;
-
-    --radius-xl:32px;
-
-    /* Shadows */
-
-    --shadow-sm:
-
-        0 5px 15px rgba(124,58,237,.08);
-
-    --shadow:
-
-        0 15px 35px rgba(124,58,237,.12);
-
-    --shadow-lg:
-
-        0 30px 70px rgba(124,58,237,.18);
-
-    /* Gradient */
-
-    --gradient:
-
-        linear-gradient(
-
-            135deg,
-
-            #7C3AED,
-
-            #A855F7,
-
-            #D946EF
-
+    --primary-05:
+        color-mix(
+            in srgb,
+            var(--primary) 5%,
+            transparent
         );
 
-    /* Font */
+    --primary-08:
+        color-mix(
+            in srgb,
+            var(--primary) 8%,
+            transparent
+        );
+
+    --primary-10:
+        color-mix(
+            in srgb,
+            var(--primary) 10%,
+            transparent
+        );
+
+    --primary-12:
+        color-mix(
+            in srgb,
+            var(--primary) 12%,
+            transparent
+        );
+
+    --primary-15:
+        color-mix(
+            in srgb,
+            var(--primary) 15%,
+            transparent
+        );
+
+    --primary-18:
+        color-mix(
+            in srgb,
+            var(--primary) 18%,
+            transparent
+        );
+
+    --primary-20:
+        color-mix(
+            in srgb,
+            var(--primary) 20%,
+            transparent
+        );
+
+    --primary-25:
+        color-mix(
+            in srgb,
+            var(--primary) 25%,
+            transparent
+        );
+
+    --primary-35:
+        color-mix(
+            in srgb,
+            var(--primary) 35%,
+            transparent
+        );
+
+    --primary-40:
+        color-mix(
+            in srgb,
+            var(--primary) 40%,
+            transparent
+        );
+
+
+    /* ======================================================
+       ACCENT OPACITY TOKENS
+       ------------------------------------------------------
+       These automatically follow --accent.
+    ====================================================== */
+
+    --accent-03:
+        color-mix(
+            in srgb,
+            var(--accent) 3%,
+            transparent
+        );
+
+    --accent-04:
+        color-mix(
+            in srgb,
+            var(--accent) 4%,
+            transparent
+        );
+
+    --accent-08:
+        color-mix(
+            in srgb,
+            var(--accent) 8%,
+            transparent
+        );
+
+
+    /* ======================================================
+       WHITE OVERLAY TOKENS
+    ====================================================== */
+
+    --white-08:
+        color-mix(
+            in srgb,
+            var(--white) 8%,
+            transparent
+        );
+
+    --white-40:
+        color-mix(
+            in srgb,
+            var(--white) 40%,
+            transparent
+        );
+
+    --white-45:
+        color-mix(
+            in srgb,
+            var(--white) 45%,
+            transparent
+        );
+
+    --white-55:
+        color-mix(
+            in srgb,
+            var(--white) 55%,
+            transparent
+        );
+
+    --white-65:
+        color-mix(
+            in srgb,
+            var(--white) 65%,
+            transparent
+        );
+
+    --white-75:
+        color-mix(
+            in srgb,
+            var(--white) 75%,
+            transparent
+        );
+
+    --white-78:
+        color-mix(
+            in srgb,
+            var(--white) 78%,
+            transparent
+        );
+
+    --white-85:
+        color-mix(
+            in srgb,
+            var(--white) 85%,
+            transparent
+        );
+
+    --white-90:
+        color-mix(
+            in srgb,
+            var(--white) 90%,
+            transparent
+        );
+
+    --white-92:
+        color-mix(
+            in srgb,
+            var(--white) 92%,
+            transparent
+        );
+
+
+    /* ======================================================
+       BLACK OVERLAY TOKENS
+    ====================================================== */
+
+    --black-08:
+        color-mix(
+            in srgb,
+            var(--black) 8%,
+            transparent
+        );
+
+    --black-12:
+        color-mix(
+            in srgb,
+            var(--black) 12%,
+            transparent
+        );
+
+    --black-35:
+        color-mix(
+            in srgb,
+            var(--black) 35%,
+            transparent
+        );
+
+    --black-45:
+        color-mix(
+            in srgb,
+            var(--black) 45%,
+            transparent
+        );
+
+    --black-55:
+        color-mix(
+            in srgb,
+            var(--black) 55%,
+            transparent
+        );
+
+
+    /* ======================================================
+       DARK TEXT / NAVY OVERLAYS
+       ------------------------------------------------------
+       Based on gray-900 so they remain globally controlled.
+    ====================================================== */
+
+    --ink-08:
+        color-mix(
+            in srgb,
+            var(--gray-900) 8%,
+            transparent
+        );
+
+    --ink-12:
+        color-mix(
+            in srgb,
+            var(--gray-900) 12%,
+            transparent
+        );
+
+    --ink-14:
+        color-mix(
+            in srgb,
+            var(--gray-900) 14%,
+            transparent
+        );
+
+    --ink-75:
+        color-mix(
+            in srgb,
+            var(--gray-900) 75%,
+            transparent
+        );
+
+
+    /* ======================================================
+       SUCCESS EFFECTS
+    ====================================================== */
+
+    --success-00:
+        color-mix(
+            in srgb,
+            var(--success) 0%,
+            transparent
+        );
+
+    --success-50:
+        color-mix(
+            in srgb,
+            var(--success) 50%,
+            transparent
+        );
+
+
+    /* ======================================================
+       BRAND DEEP COLOR
+       ------------------------------------------------------
+       Automatically derived from the primary color.
+    ====================================================== */
+
+    --brand-deep:
+        color-mix(
+            in srgb,
+            var(--primary) 35%,
+            var(--gray-900)
+        );
+
+
+    /* ======================================================
+       GRADIENT
+    ====================================================== */
+
+    --gradient:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--primary-light),
+            var(--accent)
+        );
+
+
+    /* ======================================================
+       SHADOWS
+    ====================================================== */
+
+    --shadow-sm:
+        0 5px 15px var(--primary-08);
+
+    --shadow:
+        0 15px 35px var(--primary-12);
+
+    --shadow-lg:
+        0 30px 70px var(--primary-18);
+
+
+    /* ======================================================
+       TYPOGRAPHY
+    ====================================================== */
 
     --font-family:
+        'Poppins', sans-serif;
 
-        'Poppins',sans-serif;
 
-    /* Layout */
+    /* ======================================================
+       BORDER RADIUS
+    ====================================================== */
 
-    --header-height:90px;
+    --radius-sm: 12px;
 
-    --transition:.35s ease;
+    --radius-md: 18px;
+
+    --radius-lg: 24px;
+
+    --radius-xl: 32px;
+
+
+    /* ======================================================
+       LAYOUT
+    ====================================================== */
+
+    --header-height: 90px;
+
+    --container: 1200px;
+
+
+    /* ======================================================
+       TRANSITIONS
+    ====================================================== */
+
+    --transition: .35s ease;
 
 }
 
@@ -142,51 +434,60 @@
    LIGHT THEME
 ========================================================== */
 
-:root{
+:root {
 
-    color-scheme:light;
+    color-scheme: light;
 
 }
+
 
 /* ==========================================================
    DARK THEME
 ========================================================== */
 
-html[data-theme="dark"]{
+html[data-theme="dark"] {
 
-    color-scheme:dark;
+    color-scheme: dark;
 
-    /* Background */
 
-    --background:#0B1120;
+    /* ------------------------------------------------------
+       BACKGROUNDS
+    ------------------------------------------------------ */
 
-    --surface:#111827;
+    --background: #0B1120;
 
-    --surface-2:#1E293B;
+    --surface: #111827;
 
-    /* Text */
+    --surface-2: #1E293B;
 
-    --text:#F8FAFC;
 
-    --text-light:#CBD5E1;
+    /* ------------------------------------------------------
+       TEXT
+    ------------------------------------------------------ */
 
-    /* Border */
+    --text: var(--gray-50);
 
-    --border:rgba(255,255,255,.08);
+    --text-light: var(--gray-300);
 
-    /* Shadows */
+
+    /* ------------------------------------------------------
+    BORDER
+    ------------------------------------------------------ */
+
+    --border: var(--white-08);
+
+    /* ------------------------------------------------------
+       DARK THEME SHADOWS
+    ------------------------------------------------------ */
 
     --shadow-sm:
-
-        0 8px 20px rgba(0,0,0,.35);
+        0 8px 20px var(--black-35);
 
     --shadow:
-
-        0 18px 45px rgba(0,0,0,.45);
+        0 18px 45px var(--black-45);
 
     --shadow-lg:
-
-        0 30px 80px rgba(0,0,0,.55);
+        0 30px 80px var(--black-55);
 
 }
 
@@ -359,7 +660,10 @@ p{
 
 .container{
 
-    width:min(92%,var(--container));
+    width:min(
+        92%,
+        var(--container)
+        );
 
     margin-inline:auto;
 
@@ -441,15 +745,11 @@ section{
 
 .btn-primary{
 
-    background:linear-gradient(
-
-        135deg,
-
-        var(--primary),
-
-        var(--accent)
-
-    );
+    background: linear-gradient(
+    135deg,
+    var(--gray-900),
+    var(--brand-deep)
+);
 
     color:var(--white);
 
@@ -503,9 +803,9 @@ section{
 
         );
 
-    -webkit-background-clip:text;
+    -webkit-background-clip: text;
 
-    -webkit-text-fill-color:transparent;
+    -webkit-text-fill-color: transparent;
 
 }
 
@@ -567,29 +867,34 @@ section{
 
     transition:all .35s ease;
 
-    background:rgba(255,255,255,.75);
+    background:var(--white-75);
 
     backdrop-filter:blur(18px);
 
     -webkit-backdrop-filter:blur(18px);
 
-    border-bottom:1px solid rgba(226,232,240,.65);
+    border-bottom:
+        1px solid color-mix(
+            in srgb,
+            var(--gray-200) 65%,
+            transparent
+        );
 
 }
 
 html[data-theme="dark"] .header{
 
-        background:rgba(15,23,42,.75);
+        background:var(--ink-75);
 
-        border-bottom:1px solid rgba(255,255,255,.08);
+        border-bottom:1px solid var(--white-08);
 
 }
 
 .header.scrolled{
 
-    background:rgba(255,255,255,.92);
+    background:var(--white-92);
 
-    box-shadow:0 12px 35px rgba(15,23,42,.08);
+    box-shadow:0 12px 35px var(--ink-08);
 
     border-bottom:1px solid var(--border);
 
@@ -629,7 +934,7 @@ html[data-theme="dark"] .header{
 
 .logo img{
 
-    height:48px;
+    height: 200px;
 
     width:auto;
 
@@ -708,15 +1013,11 @@ html[data-theme="dark"] .header{
 
     height:2px;
 
-    background:linear-gradient(
-
-        90deg,
-
-        var(--primary),
-
-        var(--accent)
-
-    );
+    background: linear-gradient(
+    135deg,
+    var(--gray-900),
+    var(--brand-deep)
+);
 
     transition:width .35s ease;
 
@@ -908,7 +1209,7 @@ body.menu-open{
 
 .btn:focus-visible{
 
-    outline:3px solid rgba(124,58,237,.25);
+    outline:3px solid var(--primary-25);
 
     outline-offset:4px;
 
@@ -1186,7 +1487,7 @@ body.menu-open{
 
     font-weight:600;
 
-    background:rgba(255,255,255,.85);
+    background:var(--white-85);
 
     border:1px solid var(--border);
 
@@ -1232,7 +1533,7 @@ body.menu-open{
 
     border-radius:50%;
 
-    border:1px dashed rgba(37,99,235,.15);
+    border:1px dashed var(--primary-15);
 
     right:14%;
 
@@ -1254,7 +1555,7 @@ body.menu-open{
 
     border-radius:50%;
 
-    background:rgba(6,182,212,.08);
+    background:var(--accent-08);
 
     left:5%;
 
@@ -1308,13 +1609,13 @@ body.menu-open{
 
     max-width:560px;
 
-    background:rgba(255,255,255,.78);
+    background:var(--white-78);
 
     backdrop-filter:blur(24px);
 
     -webkit-backdrop-filter:blur(24px);
 
-    border:1px solid rgba(255,255,255,.55);
+    border:1px solid var(--white-55);
 
     border-radius:26px;
 
@@ -1322,7 +1623,7 @@ body.menu-open{
 
     box-shadow:
 
-        0 25px 80px rgba(15,23,42,.12);
+        0 25px 80px var(--ink-12);
 
     overflow:hidden;
 
@@ -1400,17 +1701,13 @@ body.menu-open{
 
     border-radius:14px;
 
-    background:linear-gradient(
+    background: linear-gradient(
+    135deg,
+    var(--gray-900),
+    var(--brand-deep)
+);
 
-        135deg,
-
-        var(--primary),
-
-        var(--accent)
-
-    );
-
-    color:#fff;
+    color:var(--white);
 
     font-size:18px;
 
@@ -1454,19 +1751,19 @@ body.menu-open{
 
     0%{
 
-        box-shadow:0 0 0 0 rgba(16,185,129,.5);
+        box-shadow:0 0 0 0 var(--success-50);
 
     }
 
     70%{
 
-        box-shadow:0 0 0 12px rgba(16,185,129,0);
+        box-shadow:0 0 0 12px var(--success-00);
 
     }
 
     100%{
 
-        box-shadow:0 0 0 0 rgba(16,185,129,0);
+        box-shadow:0 0 0 0 var(--success-00);
 
     }
 
@@ -1680,17 +1977,13 @@ body.menu-open{
 
     border-radius:16px;
 
-    background:linear-gradient(
+    background: linear-gradient(
+    135deg,
+    var(--gray-900),
+    var(--brand-deep)
+);
 
-        135deg,
-
-        var(--primary),
-
-        var(--accent)
-
-    );
-
-    color:#fff;
+    color:var(--white);
 
     font-size:20px;
 
@@ -1977,13 +2270,13 @@ body.menu-open{
 
     border-radius:20px;
 
-    background:linear-gradient(
-        135deg,
-        var(--primary),
-        var(--accent)
-    );
+    background: linear-gradient(
+    135deg,
+    var(--gray-900),
+    var(--brand-deep)
+);
 
-    color:#ffffff;
+    color:var(--white);
 
     font-size:30px;
 
@@ -2177,17 +2470,11 @@ body.menu-open{
 
     height:100%;
 
-    background:linear-gradient(
-
-        90deg,
-
-        transparent,
-
-        rgba(255,255,255,.55),
-
-        transparent
-
-    );
+    background: linear-gradient(
+    135deg,
+    var(--gray-900),
+    var(--brand-deep)
+);
 
     transform:skewX(-25deg);
 
@@ -2305,13 +2592,13 @@ body.menu-open{
 
     border-radius:20px;
 
-    background:linear-gradient(
-        135deg,
-        var(--primary),
-        var(--accent)
-    );
+    background: linear-gradient(
+    135deg,
+    var(--gray-900),
+    var(--brand-deep)
+);
 
-    color:#fff;
+    color:var(--white);
 
     font-size:28px;
 
@@ -2433,13 +2720,13 @@ body.menu-open{
 
     border-radius:50%;
 
-    background:linear-gradient(
-        135deg,
-        var(--primary),
-        var(--accent)
-    );
+    background: linear-gradient(
+    135deg,
+    var(--gray-900),
+    var(--brand-deep)
+);
 
-    color:#fff;
+    color:var(--white);
 
     font-weight:700;
 
@@ -2469,13 +2756,13 @@ body.menu-open{
 
     border-radius:28px;
 
-    background:linear-gradient(
-        135deg,
-        #0F172A,
-        #1E3A8A
-    );
+    background: linear-gradient(
+    135deg,
+    var(--gray-900),
+    var(--brand-deep)
+);
 
-    color:#ffffff;
+    color: var(--white);
 
     box-shadow:var(--shadow-lg);
 
@@ -2483,7 +2770,7 @@ body.menu-open{
 
 .case-card h2{
 
-    color:#ffffff;
+    color: var(--white);
 
     margin:20px 0;
 
@@ -2491,7 +2778,7 @@ body.menu-open{
 
 .case-card p{
 
-    color:rgba(255,255,255,.85);
+    color:var(--white-85);
 
     margin-bottom:35px;
 
@@ -2523,19 +2810,19 @@ body.menu-open{
 
     border-radius:28px;
 
-    background:linear-gradient(
-        135deg,
-        var(--primary),
-        var(--accent)
+    background: linear-gradient(
+    135deg,
+    var(--gray-900),
+    var(--brand-deep)
     );
 
-    color:#ffffff;
+    color: var(--white);
 
 }
 
 .cta-box h2{
 
-    color:#ffffff;
+    color: var(--white);
 
     margin-bottom:20px;
 
@@ -2543,7 +2830,7 @@ body.menu-open{
 
 .cta-box p{
 
-    color:rgba(255,255,255,.9);
+    color:var(--white-90);
 
     max-width:700px;
 
@@ -2565,9 +2852,9 @@ body.menu-open{
 
 .footer{
 
-    background:#0F172A;
+    background: var(--gray-900);
 
-    color:#CBD5E1;
+    color: var(--gray-300);
 
     padding:80px 0 30px;
 
@@ -2587,7 +2874,7 @@ body.menu-open{
 
 .footer-logo{
 
-    height:55px;
+    height:200px;
 
     margin-bottom:20px;
 
@@ -2595,7 +2882,7 @@ body.menu-open{
 
 .footer h4{
 
-    color:#ffffff;
+    color:var(--white);
 
     margin-bottom:20px;
 
@@ -2603,7 +2890,7 @@ body.menu-open{
 
 .footer p{
 
-    color:#94A3B8;
+    color: var(--gray-400);
 
 }
 
@@ -2619,7 +2906,7 @@ body.menu-open{
 
 .footer ul a{
 
-    color:#CBD5E1;
+    color: var(--gray-300);
 
     transition:var(--transition);
 
@@ -2627,7 +2914,7 @@ body.menu-open{
 
 .footer ul a:hover{
 
-    color:#ffffff;
+    color: var(--white);
 
     padding-left:6px;
 
@@ -2657,7 +2944,7 @@ body.menu-open{
 
     border-radius:12px;
 
-    background:rgba(255,255,255,.08);
+    background:var(--white-08);
 
     transition:var(--transition);
 
@@ -2667,13 +2954,13 @@ body.menu-open{
 
     background:var(--primary);
 
-    color:#ffffff;
+    color: var(--white);
 
 }
 
 .footer-bottom{
 
-    border-top:1px solid rgba(255,255,255,.08);
+    border-top:1px solid var(--white-08);
 
     padding-top:25px;
 
@@ -2693,15 +2980,16 @@ body.menu-open{
 
 ::-webkit-scrollbar-track{
 
-    background:#F1F5F9;
+    background: var(--gray-100);
 
 }
 
 ::-webkit-scrollbar-thumb{
 
-    background:linear-gradient(
-        var(--primary),
-        var(--accent)
+    background: linear-gradient(
+    135deg,
+    var(--gray-900),
+    var(--brand-deep)
     );
 
     border-radius:100px;
@@ -2716,7 +3004,7 @@ body.menu-open{
 
     background:var(--primary);
 
-    color:#ffffff;
+    color: var(--white);
 
 }
 
@@ -2782,13 +3070,13 @@ button,
 
     align-items:center;
 
-    background:linear-gradient(
-        135deg,
-        var(--primary),
-        var(--accent)
+    background: linear-gradient(
+    135deg,
+    var(--gray-900),
+    var(--brand-deep)
     );
 
-    color:#ffffff;
+    color: var(--white);
 
     cursor:pointer;
 
@@ -2830,7 +3118,7 @@ button,
 
 .keyboard-user *:focus{
 
-    outline:3px solid rgba(37,99,235,.35);
+    outline:3px solid var(--primary-35);
 
     outline-offset:3px;
 

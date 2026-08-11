@@ -375,28 +375,41 @@ function updateLogo(theme){
 
 }
 
-function updateBrowserTheme(theme){
+function updateBrowserTheme(theme) {
 
     const meta =
-
         document.querySelector(
-
             'meta[name="theme-color"]'
-
         );
 
-    if(!meta) return;
+    if (!meta) return;
+
+
+    const root =
+        document.documentElement;
+
+
+    const styles =
+        getComputedStyle(root);
+
+
+    const background =
+        styles
+            .getPropertyValue("--background")
+            .trim();
+
+
+    const primary =
+        styles
+            .getPropertyValue("--primary")
+            .trim();
+
 
     meta.setAttribute(
-
         "content",
-
-        theme==="dark"
-
-        ? "#0F172A"
-
-        : "#FFFFFF"
-
+        theme === "dark"
+            ? background
+            : primary
     );
 
 }

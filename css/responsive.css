@@ -72,7 +72,7 @@
 
         height:calc(100vh - 90px);
 
-        background:#ffffff;
+        background: var(--surface);
 
         flex-direction:column;
 
@@ -86,7 +86,8 @@
 
         transition:.4s ease;
 
-        box-shadow:0 20px 40px rgba(0,0,0,.08);
+        box-shadow:
+            0 20px 40px var(--black-08);
 
     }
 
@@ -1118,9 +1119,9 @@
 
     body{
 
-        background:#ffffff;
+        background: var(--background);
 
-        color:#000000;
+        color:var(--text);
 
     }
 
