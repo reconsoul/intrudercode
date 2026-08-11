@@ -1273,5 +1273,37 @@ img{
 }
 
 /* ==========================================================
+   HOMEPAGE — INDUSTRIES
+========================================================== */
+
+@media (max-width: 992px) {
+
+    .industries-grid {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+    }
+
+}
+
+
+@media (max-width: 576px) {
+
+    .industries-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .industry-card {
+
+        padding: 26px;
+
+    }
+
+}
+
+/* ==========================================================
    END OF RESPONSIVE.CSS
 ========================================================== */
