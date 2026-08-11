@@ -423,9 +423,7 @@ if (footerYear) {
 ========================================================== */
 
 const cards = document.querySelectorAll(
-
-    ".expert-card, .solution-card, .why-card"
-
+    ".trust-card, .solution-card, .industry-card"
 );
 
 cards.forEach(card=>{

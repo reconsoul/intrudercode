@@ -2576,61 +2576,6 @@ body.menu-open{
     background:var(--surface);
 
 }
-
-.industry-item{
-
-    background:var(--surface);
-
-    border:1px solid var(--border);
-
-    border-radius:20px;
-
-    padding:30px;
-
-    display:flex;
-
-    align-items:center;
-
-    gap:18px;
-
-    transition:var(--transition);
-
-    box-shadow:var(--shadow-sm);
-
-}
-
-.industry-item:hover{
-
-    transform:translateY(-8px);
-
-    border-color:var(--primary-25);
-
-    box-shadow:var(--shadow);
-
-}
-
-.industry-item i{
-
-    width:60px;
-
-    height:60px;
-
-    border-radius:18px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    background:var(--primary-08);
-
-    color:var(--primary);
-
-    font-size:24px;
-
-}
-
 /* ==========================================================
    22. SHARED CARD EFFECTS
 ========================================================== */
