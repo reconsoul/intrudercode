@@ -1488,7 +1488,48 @@ img{
 
 }
 
+@media (max-width: 992px) {
 
+    .why-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+
+    }
+
+
+    .why-visual {
+
+        order: -1;
+
+    }
+
+}
+
+@media (max-width: 576px) {
+
+    .why-grid {
+
+        gap: 32px;
+
+    }
+
+
+    .security-stack-header {
+
+        padding: 18px 20px;
+
+    }
+
+
+    .stack-layer {
+
+        padding: 18px 20px;
+
+    }
+
+}
 
 /* ==========================================================
    END OF RESPONSIVE.CSS

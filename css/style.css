@@ -2675,39 +2675,20 @@ body.menu-open{
    24. WHY CHOOSE US
 ========================================================== */
 
-.why-us{
+.why-grid {
 
-    background:var(--background);
+    display: grid;
 
-}
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, .9fr);
 
-.why-grid{
+    gap: 70px;
 
-    display:grid;
-
-    grid-template-columns:repeat(4,1fr);
-
-    gap:30px;
+    align-items: center;
 
 }
 
-.why-card{
-
-    background:var(--surface);
-
-    border:1px solid var(--border);
-
-    border-radius:22px;
-
-    padding:40px 30px;
-
-    text-align:center;
-
-    transition:var(--transition);
-
-    box-shadow:var(--shadow-sm);
-
-}
 
 .why-card:hover{
 
@@ -4562,6 +4543,306 @@ button,
 
     background:
         var(--background);
+
+}
+
+/* ==========================================================
+   ABOUT HERO — SECURITY DASHBOARD
+========================================================== */
+
+.about-hero .dashboard {
+
+    width: 100%;
+
+    max-width: 560px;
+
+}
+
+
+.dashboard-label {
+
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: var(--muted);
+
+    font-size: .72rem;
+
+    font-weight: 800;
+
+    letter-spacing: .08em;
+
+}
+
+
+.dashboard-header h3 {
+
+    margin: 0;
+
+}
+
+
+.dashboard-content {
+
+    display: grid;
+
+    gap: 14px;
+
+}
+
+
+.dashboard-card {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 16px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 16px;
+
+    background:
+        var(--surface);
+
+    transition:
+        var(--transition);
+
+}
+
+
+.dashboard-card:hover {
+
+    transform:
+        translateX(4px);
+
+    border-color:
+        var(--primary-25);
+
+    box-shadow:
+        var(--shadow-sm);
+
+}
+
+
+.dashboard-card-icon {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    width: 44px;
+
+    height: 44px;
+
+    border-radius: 13px;
+
+    background:
+        var(--primary-08);
+
+    color:
+        var(--primary);
+
+}
+
+
+.dashboard-card strong {
+
+    display: block;
+
+    margin-bottom: 3px;
+
+    color:
+        var(--text);
+
+}
+
+
+.dashboard-card span {
+
+    display: block;
+
+    color:
+        var(--muted);
+
+    font-size: .82rem;
+
+}
+
+/* ==========================================================
+   ABOUT — SECURITY STACK
+========================================================== */
+
+.why-visual {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+
+.security-stack {
+
+    width: 100%;
+
+    max-width: 500px;
+
+    overflow: hidden;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 24px;
+
+    background:
+        var(--surface);
+
+    box-shadow:
+        var(--shadow-lg);
+
+}
+
+
+.security-stack-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 20px 24px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--accent)
+        );
+
+    color:
+        var(--white);
+
+}
+
+
+.security-stack-header span {
+
+    font-size: .75rem;
+
+    font-weight: 800;
+
+    letter-spacing: .08em;
+
+}
+
+
+.security-stack-layers {
+
+    display: grid;
+
+    gap: 0;
+
+}
+
+
+.stack-layer {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    padding: 20px 24px;
+
+    border-bottom:
+        1px solid var(--border);
+
+}
+
+
+.stack-layer:last-child {
+
+    border-bottom: none;
+
+}
+
+
+.stack-number {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    width: 42px;
+
+    height: 42px;
+
+    border-radius: 12px;
+
+    background:
+        var(--primary-08);
+
+    color:
+        var(--primary);
+
+    font-size: .78rem;
+
+    font-weight: 800;
+
+}
+
+
+.stack-layer strong {
+
+    display: block;
+
+    margin-bottom: 3px;
+
+}
+
+
+.stack-layer small {
+
+    display: block;
+
+    color:
+        var(--muted);
+
+    font-size: .8rem;
+
+}
+
+.dashboard-status {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: var(--muted);
+
+    font-size: .8rem;
+
+    font-weight: 700;
 
 }
 
