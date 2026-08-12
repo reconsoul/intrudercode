@@ -1751,6 +1751,226 @@ img{
     }
 
 }
+
+/* ==========================================================
+   CONTACT PAGE — TABLET
+========================================================== */
+
+@media (max-width: 992px) {
+
+    .contact-details-grid {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+    }
+
+
+    .office-grid {
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            45px;
+
+    }
+
+
+    .office-visual {
+
+        order:
+            -1;
+
+    }
+
+
+    .contact-form-grid {
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            45px;
+
+    }
+
+
+    .consultation-box {
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            30px;
+
+    }
+
+
+    .consultation-action {
+
+        justify-content:
+            flex-start;
+
+    }
+
+}
+
+/* ==========================================================
+   CONTACT PAGE — MOBILE
+========================================================== */
+
+@media (max-width: 576px) {
+
+    .contact-hero {
+
+        min-height:
+            auto;
+
+    }
+
+
+    .contact-hero .dashboard {
+
+        margin-top:
+            10px;
+
+    }
+
+
+    .contact-details-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .contact-card {
+
+        padding:
+            26px 22px;
+
+    }
+
+
+    .office-card-content {
+
+        padding:
+            36px 24px;
+
+    }
+
+
+    .contact-form-wrapper {
+
+        padding:
+            26px 20px;
+
+        border-radius:
+            20px;
+
+    }
+
+
+    .form-highlight {
+
+        padding:
+            18px;
+
+    }
+
+
+    .consultation-box {
+
+        padding:
+            35px 24px;
+
+        border-radius:
+            22px;
+
+    }
+
+
+    .consultation-action {
+
+        width:
+            100%;
+
+    }
+
+
+    .consultation-action .btn {
+
+        width:
+            100%;
+
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .contact-hero .dashboard-card {
+
+        padding:
+            14px;
+
+    }
+
+
+    .contact-hero .dashboard-card-icon {
+
+        width:
+            40px;
+
+        height:
+            40px;
+
+    }
+
+
+    .office-detail {
+
+        align-items:
+            flex-start;
+
+        padding:
+            16px;
+
+    }
+
+
+    .office-detail-icon {
+
+        width:
+            42px;
+
+        height:
+            42px;
+
+    }
+
+
+    .contact-form-wrapper {
+
+        padding:
+            22px 16px;
+
+    }
+
+
+    .consultation-box {
+
+        padding:
+            30px 20px;
+
+    }
+
+}
+
+
+
 /* ==========================================================
    END OF RESPONSIVE.CSS
 ========================================================== */

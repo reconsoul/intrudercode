@@ -503,5 +503,90 @@ window.addEventListener(
 );
 
 /* ==========================================================
+   CONTACT FORM
+========================================================== */
+
+function initializeContactForm(){
+
+    const form =
+        document.getElementById("contactForm");
+
+    const status =
+        document.getElementById("formStatus");
+
+    if (!form || !status) {
+        return;
+    }
+
+
+    form.addEventListener("submit", (event) => {
+
+        event.preventDefault();
+
+
+        status.textContent = "";
+        status.className = "form-status";
+
+
+        if (!form.checkValidity()) {
+
+            form.reportValidity();
+
+            status.textContent =
+                "Please complete the required fields.";
+
+            status.classList.add("error");
+
+            return;
+
+        }
+
+
+        const submitButton =
+            form.querySelector(".form-submit");
+
+
+        if (submitButton) {
+
+            submitButton.disabled = true;
+
+            submitButton.setAttribute(
+                "aria-busy",
+                "true"
+            );
+
+        }
+
+
+        status.textContent =
+            "Your enquiry is ready to be submitted.";
+
+
+        status.classList.add("success");
+
+
+        /*
+         * Backend submission will be connected
+         * during the final Core Setup phase.
+         */
+
+
+        if (submitButton) {
+
+            submitButton.disabled = false;
+
+            submitButton.removeAttribute(
+                "aria-busy"
+            );
+
+        }
+
+    });
+
+}
+
+
+
+/* ==========================================================
    END OF SCRIPT.JS
 ========================================================== */
