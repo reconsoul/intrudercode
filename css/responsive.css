@@ -1717,43 +1717,40 @@ img{
 
 }
 
-.careers-hero .dashboard-card {
+@media (max-width: 480px) {
 
-    padding:
-        14px;
+    .careers-hero .dashboard-card {
 
-}
+        padding: 14px;
 
-
-.careers-hero .dashboard-card-icon {
-
-    width:
-        40px;
-
-    height:
-        40px;
-
-}
+    }
 
 
-.role-icon {
+    .careers-hero .dashboard-card-icon {
 
-    width:
-        48px;
+        width: 40px;
 
-    height:
-        48px;
+        height: 40px;
 
-}
+    }
 
 
-.apply-box {
+    .role-icon {
 
-    padding:
-        30px 20px;
+        width: 48px;
+
+        height: 48px;
+
+    }
+
+
+    .apply-box {
+
+        padding: 30px 20px;
+
+    }
 
 }
-
 /* ==========================================================
    END OF RESPONSIVE.CSS
 ========================================================== */
