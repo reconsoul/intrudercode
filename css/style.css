@@ -542,26 +542,19 @@ section,
 .footer,
 .dashboard,
 .solution-card,
-.why-card,
 .trust-card,
 .industry-card,
 .status-card,
-.process-item,
 .cta-box,
 .btn,
 .theme-toggle,
 .nav-links a{
 
     transition:
-
         background-color .25s ease,
-
         color .25s ease,
-
         border-color .25s ease,
-
         box-shadow .25s ease;
-
 }
 
 img{
@@ -2691,177 +2684,6 @@ body.menu-open{
 
 }
 
-
-.why-card:hover{
-
-    transform:translateY(-10px);
-
-    box-shadow:var(--shadow-lg);
-
-    border-color:var(--primary-25);
-
-}
-
-.why-card i{
-
-    width:72px;
-
-    height:72px;
-
-    margin:auto;
-
-    margin-bottom:22px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    border-radius:20px;
-
-    background: linear-gradient(
-        90deg,
-        var(--primary),
-        var(--accent)
-);
-
-    color:var(--white);
-
-    font-size:28px;
-
-}
-
-.why-card h3{
-
-    margin-bottom:14px;
-
-}
-
-/* ==========================================================
-   25. TECHNOLOGY STACK
-========================================================== */
-
-.technology{
-
-    background:var(--surface);
-
-}
-
-.tech-grid{
-
-    display:grid;
-
-    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-
-    gap:20px;
-
-}
-
-.tech-grid span{
-
-    padding:18px;
-
-    background:var(--surface);
-
-    border:1px solid var(--border);
-
-    border-radius:16px;
-
-    text-align:center;
-
-    font-weight:600;
-
-    transition:var(--transition);
-
-    box-shadow:var(--shadow-sm);
-
-}
-
-.tech-grid span:hover{
-
-    transform:translateY(-6px);
-
-    color:var(--primary);
-
-    border-color:var(--primary-25);
-
-}
-
-/* ==========================================================
-   26. DELIVERY PROCESS
-========================================================== */
-
-.process{
-
-    background:var(--background);
-
-}
-
-.process-grid{
-
-    display:grid;
-
-    grid-template-columns:repeat(6,1fr);
-
-    gap:20px;
-
-}
-
-.process-item{
-
-    background:var(--surface);
-
-    border-radius:20px;
-
-    border:1px solid var(--border);
-
-    padding:30px 20px;
-
-    text-align:center;
-
-    transition:var(--transition);
-
-    box-shadow:var(--shadow-sm);
-
-}
-
-.process-item:hover{
-
-    transform:translateY(-8px);
-
-    box-shadow:var(--shadow);
-
-}
-
-.process-item span{
-
-    display:inline-flex;
-
-    width:56px;
-
-    height:56px;
-
-    align-items:center;
-
-    justify-content:center;
-
-    border-radius:50%;
-
-    background: linear-gradient(
-        90deg,
-        var(--primary),
-        var(--accent)
-);
-
-    color:var(--white);
-
-    font-weight:700;
-
-    margin-bottom:18px;
-
-}
-
 /* ==========================================================
    27. FEATURED CASE STUDY
 ========================================================== */
@@ -3561,12 +3383,10 @@ button,
 .card,
 .solution-card,
 .trust-card,
-.why-card,
-.industry-card,
-.process-item,
-.tech-grid span{
+.industry-card {
 
-    transition:all .35s ease;
+    transition:
+        all .35s ease;
 
 }
 

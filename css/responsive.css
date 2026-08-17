@@ -238,12 +238,6 @@
 
     }
 
-    .why-card{
-
-        padding:35px;
-
-    }
-
     /* =====================================================
        TECHNOLOGY STACK
     ===================================================== */
@@ -885,21 +879,9 @@
        CARDS
     ========================= */
 
-    .expert-card,
-
     .solution-card,
 
-    .why-card{
-
-        padding:24px;
-
-    }
-
-    .solution-icon,
-
-    .expert-icon,
-
-    .why-card i{
+    .solution-icon {
 
         width:64px;
 
