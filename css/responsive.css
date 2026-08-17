@@ -1969,7 +1969,206 @@ img{
 
 }
 
+/* ==========================================================
+   SERVICES PAGE — TABLET
+========================================================== */
 
+@media (max-width: 992px) {
+
+    .solution-grid,
+    .solution-section.reverse .solution-grid {
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            45px;
+
+    }
+
+
+    .solution-visual {
+
+        order:
+            -1;
+
+    }
+
+
+    .engagement-grid {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+    }
+
+}
+
+/* ==========================================================
+   SERVICES PAGE — MOBILE
+========================================================== */
+
+@media (max-width: 576px) {
+
+    .solutions-hero {
+
+        min-height:
+            auto;
+
+    }
+
+
+    .solutions-hero .dashboard {
+
+        margin-top:
+            10px;
+
+    }
+
+
+    .solution-feature {
+
+        padding:
+            18px;
+
+    }
+
+
+    .security-dashboard,
+    .ai-dashboard,
+    .managed-dashboard {
+
+        border-radius:
+            20px;
+
+    }
+
+
+    .security-dashboard-header,
+    .ai-dashboard-header,
+    .managed-dashboard-header {
+
+        padding:
+            18px 20px;
+
+    }
+
+
+    .security-metric {
+
+        padding:
+            18px 20px;
+
+    }
+
+
+    .ai-dashboard-body {
+
+        padding:
+            22px;
+
+    }
+
+
+    .managed-service-item {
+
+        padding:
+            17px 20px;
+
+    }
+
+
+    .engagement-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .engagement-card {
+
+        padding:
+            30px 24px;
+
+    }
+
+
+    .faq-question {
+
+        padding:
+            20px 0;
+
+        font-size:
+            .95rem;
+
+    }
+
+
+    .faq-answer {
+
+        padding:
+            0 0 20px;
+
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .solutions-hero .dashboard-card {
+
+        padding:
+            14px;
+
+    }
+
+
+    .solutions-hero .dashboard-card-icon {
+
+        width:
+            40px;
+
+        height:
+            40px;
+
+    }
+
+
+    .solution-feature-icon {
+
+        width:
+            42px;
+
+        height:
+            42px;
+
+    }
+
+
+    .security-metric-icon,
+    .managed-service-icon {
+
+        width:
+            42px;
+
+        height:
+            42px;
+
+    }
+
+
+    .ai-step-number {
+
+        width:
+            38px;
+
+        height:
+            38px;
+
+    }
+
+}
 
 /* ==========================================================
    END OF RESPONSIVE.CSS

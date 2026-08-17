@@ -29,6 +29,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     initializeContactForm();
 
+    initializeFAQ();
+
 });
 
 /* ==========================================================
@@ -587,7 +589,78 @@ function initializeContactForm(){
 
 }
 
+/* ==========================================================
+   FAQ ACCORDION
+========================================================== */
 
+function initializeFAQ(){
+
+    const questions =
+        document.querySelectorAll(".faq-question");
+
+    if (!questions.length) {
+        return;
+    }
+
+
+    questions.forEach((question) => {
+
+        question.addEventListener("click", () => {
+
+            const answerId =
+                question.getAttribute("aria-controls");
+
+            const answer =
+                document.getElementById(answerId);
+
+            if (!answer) {
+                return;
+            }
+
+
+            const isOpen =
+                question.getAttribute("aria-expanded")
+                === "true";
+
+
+            questions.forEach((item) => {
+
+                item.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+                const itemAnswerId =
+                    item.getAttribute("aria-controls");
+
+                const itemAnswer =
+                    document.getElementById(
+                        itemAnswerId
+                    );
+
+                if (itemAnswer) {
+                    itemAnswer.hidden = true;
+                }
+
+            });
+
+
+            if (!isOpen) {
+
+                question.setAttribute(
+                    "aria-expanded",
+                    "true"
+                );
+
+                answer.hidden = false;
+
+            }
+
+        });
+
+    });
+
+}
 
 /* ==========================================================
    END OF SCRIPT.JS
