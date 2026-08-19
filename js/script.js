@@ -17,29 +17,31 @@ function handleGlobalScroll() {
    WAIT FOR DOM
 ========================================================== */
 
-    document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
 
-        initializeRevealAnimations();
+    initializeRevealAnimations();
 
-        initializeFloatingCards();
+    initializeFloatingCards();
 
-        initializeDashboardAnimation();
+    initializeDashboardAnimation();
 
-        initializeHeroParallax();
+    initializeHeroParallax();
 
-        initializeHeroGlow();
+    initializeHeroGlow();
 
-        initializeCardHoverEffect();
+    initializeCardHoverEffect();
 
-        initializeBackToTop();
+    initializeBackToTop();
 
-        initializeAccessibility();
+    initializeAccessibility();
 
-        initializeContactForm();
+    initializeContactForm();
 
-        initializeFAQ();
+    initializeFAQ();
 
-    });
+    initializeFooterYear();
+
+});
 
 /* ==========================================================
    REVEAL ANIMATION
@@ -386,15 +388,19 @@ window.addEventListener("scroll",()=>{
    AUTO FOOTER YEAR
 ========================================================== */
 
-const footerYear =
-    document.getElementById("currentYear");
+    function initializeFooterYear() {
 
-if (footerYear) {
+        const footerYear =
+            document.getElementById("currentYear");
 
-    footerYear.textContent =
-        new Date().getFullYear();
+        if (!footerYear) {
+            return;
+        }
 
-}
+        footerYear.textContent =
+            new Date().getFullYear();
+
+    }
 
 /* ==========================================================
    CARD HOVER EFFECT
