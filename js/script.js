@@ -483,17 +483,22 @@ function initializeAccessibility() {
    ERROR HANDLING
 ========================================================== */
 
-window.addEventListener("error",(event)=>{
+    window.addEventListener(
+        "error",
+        (event) => {
 
-    console.error(
+            console.error(
+                "IntruderCode Error:",
+                {
+                    message: event.message,
+                    source: event.filename,
+                    line: event.lineno,
+                    column: event.colno
+                }
+            );
 
-        "IntruderCode Error:",
-
-        event.message
-
+        }
     );
-
-});
 
 /* ==========================================================
    CONTACT FORM
