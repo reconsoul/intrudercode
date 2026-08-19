@@ -25,6 +25,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     initializeDashboardAnimation();
 
+    initializeHeroParallax();
+
+    initializeHeroGlow();
+
     initializeContactForm();
 
     initializeFAQ();
@@ -128,22 +132,26 @@ function initializeDashboardAnimation(){
    HERO PARALLAX
 ========================================================== */
 
-const hero =
-    document.querySelector(".hero");
+function initializeHeroParallax() {
 
-const dashboard =
-    document.querySelector(".dashboard");
+    const hero =
+        document.querySelector(".hero");
 
-const prefersReducedMotion =
-    window.matchMedia(
-        "(prefers-reduced-motion: reduce)"
-    ).matches;
+    const dashboard =
+        document.querySelector(".dashboard");
 
-if (
-    hero &&
-    dashboard &&
-    !prefersReducedMotion
-) {
+    const prefersReducedMotion =
+        window.matchMedia(
+            "(prefers-reduced-motion: reduce)"
+        ).matches;
+
+    if (
+        !hero ||
+        !dashboard ||
+        prefersReducedMotion
+    ) {
+        return;
+    }
 
     let targetX = 0;
     let targetY = 0;
@@ -210,13 +218,22 @@ if (
    HERO GLOW
 ========================================================== */
 
-const orbs =
-    document.querySelectorAll(".gradient-orb");
+function initializeHeroGlow() {
 
-if (
-        orbs.length &&
-        !prefersReducedMotion
+    const orbs =
+        document.querySelectorAll(".gradient-orb");
+
+    const prefersReducedMotion =
+        window.matchMedia(
+            "(prefers-reduced-motion: reduce)"
+        ).matches;
+
+    if (
+        !orbs.length ||
+        prefersReducedMotion
     ) {
+        return;
+    }
 
     let mouseX = 0;
     let mouseY = 0;
@@ -247,6 +264,7 @@ if (
                 `translate3d(${x}px, ${y}px, 0)`;
 
         });
+
         requestAnimationFrame(
             updateOrbPosition
         );
