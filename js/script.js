@@ -213,15 +213,16 @@ if (
 const orbs =
     document.querySelectorAll(".gradient-orb");
 
-if (orbs.length) {
+if (
+        orbs.length &&
+        !prefersReducedMotion
+    ) {
 
     let mouseX = 0;
     let mouseY = 0;
 
     let currentX = 0;
     let currentY = 0;
-
-    let animationFrame = null;
 
     const updateOrbPosition = () => {
 
@@ -246,11 +247,9 @@ if (orbs.length) {
                 `translate3d(${x}px, ${y}px, 0)`;
 
         });
-
-        animationFrame =
-            requestAnimationFrame(
-                updateOrbPosition
-            );
+        requestAnimationFrame(
+            updateOrbPosition
+        );
 
     };
 
@@ -273,12 +272,6 @@ if (orbs.length) {
 /* ==========================================================
    SCROLL PROGRESS BAR
 ========================================================== */
-
-const progressBar = document.createElement("div");
-
-progressBar.className = "scroll-progress";
-
-document.body.appendChild(progressBar);
 
 function updateBackToTop(){
 
@@ -345,54 +338,6 @@ backToTop.addEventListener("click",()=>{
     });
 
 });
-
-/* ==========================================================
-   IMAGE LAZY LOADING
-========================================================== */
-
-const lazyImages = document.querySelectorAll("img[data-src]");
-
-if(lazyImages.length){
-
-    const imageObserver = new IntersectionObserver(
-
-        (entries,observer)=>{
-
-            entries.forEach(entry=>{
-
-                if(!entry.isIntersecting) return;
-
-                const img = entry.target;
-
-                img.src = img.dataset.src;
-
-                img.onload = ()=>{
-
-                    img.removeAttribute("data-src");
-
-                };
-
-                observer.unobserve(img);
-
-            });
-
-        },
-
-        {
-
-            threshold:.1
-
-        }
-
-    );
-
-    lazyImages.forEach(image=>{
-
-        imageObserver.observe(image);
-
-    });
-
-}
 
 
 /* ==========================================================
@@ -480,26 +425,6 @@ window.addEventListener("error",(event)=>{
     );
 
 });
-
-/* ==========================================================
-   PERFORMANCE
-========================================================== */
-
-window.addEventListener(
-
-    "pageshow",
-
-    ()=>{
-
-        console.log(
-
-            "IntruderCode Loaded Successfully"
-
-        );
-
-    }
-
-);
 
 /* ==========================================================
    CONTACT FORM
