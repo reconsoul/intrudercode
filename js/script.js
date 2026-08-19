@@ -296,7 +296,7 @@ function initializeHeroGlow() {
 
 
 /* ==========================================================
-   SCROLL PROGRESS BAR
+   BACK TO TOP VISIBILITY
 ========================================================== */
 
 function updateBackToTop(){
