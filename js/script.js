@@ -299,21 +299,17 @@ function initializeHeroGlow() {
    BACK TO TOP VISIBILITY
 ========================================================== */
 
-function updateBackToTop(){
+    function updateBackToTop() {
+        if (!backToTop) {
+            return;
+        }
 
-    if(window.scrollY>500){
-
-        backToTop.classList.add("show");
-
+        if (window.scrollY > 500) {
+            backToTop.classList.add("show");
+        } else {
+            backToTop.classList.remove("show");
+        }
     }
-
-    else{
-
-        backToTop.classList.remove("show");
-
-    }
-
-}
 
 /* ==========================================================
    REQUEST ANIMATION FRAME
