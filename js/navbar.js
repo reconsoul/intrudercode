@@ -185,24 +185,27 @@ window.addEventListener("scroll", handleScroll);
    ACTIVE PAGE
 ========================================================== */
 
-const currentPage =
-    window.location.pathname.split("/").pop() || "index.html";
+    const path =
+        window.location.pathname
+            .replace(/\/+$/, "");
 
-navItems.forEach(link => {
+    const currentPage =
+        path === "" || path === "/"
+            ? "index.html"
+            : path.split("/").pop();
 
-    const href = link.getAttribute("href");
+    navItems.forEach(link => {
 
-    if (href === currentPage) {
+        const href =
+            link.getAttribute("href");
 
-        navItems.forEach(item =>
-            item.classList.remove("active")
-        );
+        if (href === currentPage) {
 
-        link.classList.add("active");
+            link.classList.add("active");
 
-    }
+        }
 
-});
+    });
 
 
 /* ==========================================================
