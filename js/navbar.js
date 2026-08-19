@@ -110,15 +110,17 @@ if (menuBtn && navLinks) {
    CLOSE WHEN LINK CLICKED
 ========================================================== */
 
-navItems.forEach(link => {
+    navItems.forEach(link => {
 
-    link.addEventListener("click", () => {
+        link.addEventListener("click", () => {
 
-        closeMenu();
+            if (menuBtn && navLinks) {
+                closeMenu();
+            }
+
+        });
 
     });
-
-});
 
 /* ==========================================================
    ESC KEY SUPPORT
