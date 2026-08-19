@@ -128,37 +128,80 @@ function initializeDashboardAnimation(){
    HERO PARALLAX
 ========================================================== */
 
-const hero = document.querySelector(".hero");
+const hero =
+    document.querySelector(".hero");
 
-const dashboard = document.querySelector(".dashboard");
+const dashboard =
+    document.querySelector(".dashboard");
 
-if(hero && dashboard){
+const prefersReducedMotion =
+    window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+    ).matches;
 
-    hero.addEventListener("mousemove",(event)=>{
+if (
+    hero &&
+    dashboard &&
+    !prefersReducedMotion
+) {
 
-        const rect = hero.getBoundingClientRect();
+    let targetX = 0;
+    let targetY = 0;
 
-        const x = event.clientX - rect.left;
+    let currentX = 0;
+    let currentY = 0;
 
-        const y = event.clientY - rect.top;
+    const updateDashboardPosition = () => {
 
-        const moveX = (x - rect.width/2) / 40;
+        currentX +=
+            (targetX - currentX) * 0.08;
 
-        const moveY = (y - rect.height/2) / 40;
+        currentY +=
+            (targetY - currentY) * 0.08;
 
         dashboard.style.transform =
+            `translate3d(${currentX}px, ${currentY}px, 0)`;
 
-            `translate(${moveX}px, ${moveY}px)`;
+        requestAnimationFrame(
+            updateDashboardPosition
+        );
 
-    });
+    };
 
-    hero.addEventListener("mouseleave",()=>{
+    hero.addEventListener(
+        "mousemove",
+        (event) => {
 
-        dashboard.style.transform =
+            const rect =
+                hero.getBoundingClientRect();
 
-            "translate(0,0)";
+            const x =
+                event.clientX - rect.left;
 
-    });
+            const y =
+                event.clientY - rect.top;
+
+            targetX =
+                (x - rect.width / 2) / 40;
+
+            targetY =
+                (y - rect.height / 2) / 40;
+
+        },
+        { passive: true }
+    );
+
+    hero.addEventListener(
+        "mouseleave",
+        () => {
+
+            targetX = 0;
+            targetY = 0;
+
+        }
+    );
+
+    updateDashboardPosition();
 
 }
 
@@ -167,25 +210,64 @@ if(hero && dashboard){
    HERO GLOW
 ========================================================== */
 
-const orbs = document.querySelectorAll(".gradient-orb");
+const orbs =
+    document.querySelectorAll(".gradient-orb");
 
-window.addEventListener("mousemove",(event)=>{
+if (orbs.length) {
 
-    orbs.forEach((orb,index)=>{
+    let mouseX = 0;
+    let mouseY = 0;
 
-        const speed = (index+1) * 0.01;
+    let currentX = 0;
+    let currentY = 0;
 
-        const x = event.clientX * speed;
+    let animationFrame = null;
 
-        const y = event.clientY * speed;
+    const updateOrbPosition = () => {
 
-        orb.style.transform =
+        currentX +=
+            (mouseX - currentX) * 0.08;
 
-            `translate(${x}px,${y}px)`;
+        currentY +=
+            (mouseY - currentY) * 0.08;
 
-    });
+        orbs.forEach((orb, index) => {
 
-});
+            const speed =
+                (index + 1) * 0.01;
+
+            const x =
+                currentX * speed;
+
+            const y =
+                currentY * speed;
+
+            orb.style.transform =
+                `translate3d(${x}px, ${y}px, 0)`;
+
+        });
+
+        animationFrame =
+            requestAnimationFrame(
+                updateOrbPosition
+            );
+
+    };
+
+    window.addEventListener(
+        "mousemove",
+        (event) => {
+
+            mouseX = event.clientX;
+            mouseY = event.clientY;
+
+        },
+        { passive: true }
+    );
+
+    updateOrbPosition();
+
+}
 
 
 /* ==========================================================
