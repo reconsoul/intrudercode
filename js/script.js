@@ -31,6 +31,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     initializeCardHoverEffect();
 
+    initializeAccessibility();
+
     initializeContactForm();
 
     initializeFAQ();
@@ -446,21 +448,36 @@ function initializeCardHoverEffect() {
    ACCESSIBILITY
 ========================================================== */
 
-document.addEventListener("keyup",(event)=>{
+function initializeAccessibility() {
 
-    if(event.key==="Tab"){
+    document.addEventListener(
+        "keydown",
+        (event) => {
 
-        document.body.classList.add("keyboard-user");
+            if (event.key === "Tab") {
 
-    }
+                document.body.classList.add(
+                    "keyboard-user"
+                );
 
-});
+            }
 
-document.addEventListener("mousedown",()=>{
+        }
+    );
 
-    document.body.classList.remove("keyboard-user");
+    document.addEventListener(
+        "mousedown",
+        () => {
 
-});
+            document.body.classList.remove(
+                "keyboard-user"
+            );
+
+        },
+        { passive: true }
+    );
+
+}
 
 /* ==========================================================
    ERROR HANDLING
