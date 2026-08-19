@@ -17,27 +17,29 @@ function handleGlobalScroll() {
    WAIT FOR DOM
 ========================================================== */
 
-document.addEventListener("DOMContentLoaded", () => {
+    document.addEventListener("DOMContentLoaded", () => {
 
-    initializeRevealAnimations();
+        initializeRevealAnimations();
 
-    initializeFloatingCards();
+        initializeFloatingCards();
 
-    initializeDashboardAnimation();
+        initializeDashboardAnimation();
 
-    initializeHeroParallax();
+        initializeHeroParallax();
 
-    initializeHeroGlow();
+        initializeHeroGlow();
 
-    initializeCardHoverEffect();
+        initializeCardHoverEffect();
 
-    initializeAccessibility();
+        initializeBackToTop();
 
-    initializeContactForm();
+        initializeAccessibility();
 
-    initializeFAQ();
+        initializeContactForm();
 
-});
+        initializeFAQ();
+
+    });
 
 /* ==========================================================
    REVEAL ANIMATION
@@ -337,29 +339,47 @@ window.addEventListener("scroll",()=>{
    BACK TO TOP BUTTON
 ========================================================== */
 
-const backToTop = document.createElement("button");
+    let backToTop = null;
 
-backToTop.className = "back-to-top";
+    function initializeBackToTop() {
 
-backToTop.setAttribute("aria-label","Back to Top");
+        if (backToTop) {
+            return;
+        }
 
-backToTop.innerHTML =
+        backToTop =
+            document.createElement("button");
 
-    '<i class="fa-solid fa-arrow-up"></i>';
+        backToTop.className = "back-to-top";
 
-document.body.appendChild(backToTop);
+        backToTop.setAttribute(
+            "type",
+            "button"
+        );
 
-backToTop.addEventListener("click",()=>{
+        backToTop.setAttribute(
+            "aria-label",
+            "Back to Top"
+        );
 
-    window.scrollTo({
+        backToTop.innerHTML =
+            '<i class="fa-solid fa-arrow-up" aria-hidden="true"></i>';
 
-        top:0,
+        document.body.appendChild(backToTop);
 
-        behavior:"smooth"
+        backToTop.addEventListener(
+            "click",
+            () => {
 
-    });
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
 
-});
+            }
+        );
+
+    }
 
 
 /* ==========================================================
