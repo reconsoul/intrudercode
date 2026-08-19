@@ -29,6 +29,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     initializeHeroGlow();
 
+    initializeCardHoverEffect();
+
     initializeContactForm();
 
     initializeFAQ();
@@ -376,27 +378,69 @@ if (footerYear) {
    CARD HOVER EFFECT
 ========================================================== */
 
-const cards = document.querySelectorAll(
-    ".trust-card, .solution-card, .industry-card"
-);
+function initializeCardHoverEffect() {
 
-cards.forEach(card=>{
+    const cards = document.querySelectorAll(
+        ".trust-card, .solution-card, .industry-card"
+    );
 
-    card.addEventListener("mousemove",(event)=>{
+    if (!cards.length) {
+        return;
+    }
 
-        const rect = card.getBoundingClientRect();
+    cards.forEach(card => {
 
-        const x = event.clientX - rect.left;
+        let mouseX = 0;
+        let mouseY = 0;
 
-        const y = event.clientY - rect.top;
+        let framePending = false;
 
-        card.style.setProperty("--x",x+"px");
+        const updateCardPosition = () => {
 
-        card.style.setProperty("--y",y+"px");
+            card.style.setProperty(
+                "--x",
+                `${mouseX}px`
+            );
+
+            card.style.setProperty(
+                "--y",
+                `${mouseY}px`
+            );
+
+            framePending = false;
+
+        };
+
+        card.addEventListener(
+            "mousemove",
+            (event) => {
+
+                const rect =
+                    card.getBoundingClientRect();
+
+                mouseX =
+                    event.clientX - rect.left;
+
+                mouseY =
+                    event.clientY - rect.top;
+
+                if (!framePending) {
+
+                    framePending = true;
+
+                    requestAnimationFrame(
+                        updateCardPosition
+                    );
+
+                }
+
+            },
+            { passive: true }
+        );
 
     });
 
-});
+}
 
 /* ==========================================================
    ACCESSIBILITY
