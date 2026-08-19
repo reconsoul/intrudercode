@@ -9,8 +9,6 @@ let isTicking = false;
 
 function handleGlobalScroll() {
 
-    updateProgressBar();
-
     updateBackToTop();
 
 }
@@ -199,24 +197,6 @@ const progressBar = document.createElement("div");
 progressBar.className = "scroll-progress";
 
 document.body.appendChild(progressBar);
-
-function updateProgressBar(){
-
-    const scrollTop = window.scrollY;
-
-    const documentHeight =
-
-        document.documentElement.scrollHeight -
-
-        window.innerHeight;
-
-    const progress =
-
-        (scrollTop/documentHeight)*100;
-
-    progressBar.style.width = progress + "%";
-
-}
 
 function updateBackToTop(){
 
